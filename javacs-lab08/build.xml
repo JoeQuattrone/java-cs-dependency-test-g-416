@@ -10,7 +10,7 @@
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
     <path id="JavaCS.classpath">
-        <fileset dir="lib/ivy" />
+        <fileset dir="lib/ant_ivy" />
         <pathelement location="bin"/>
         <pathelement location="lib/jedis-2.8.0.jar"/>
         <pathelement location="lib/jsoup-1.8.3.jar"/>
@@ -36,7 +36,7 @@
         <delete dir="bin"/>
     </target>
      <target name="resolve" description="--> retrieve dependencies with ivy">
-         <ivy:retrieve pattern="lib/ivy/[artifact]-[type]-[revision].[ext]"/>
+         <ivy:retrieve pattern="lib/ant_ivy/[artifact]-[type]-[revision].[ext]"/>
     </target>
     <target depends="clean" name="cleanall"/>
     <target depends="resolve,build-subprojects,build-project" name="build"/>
